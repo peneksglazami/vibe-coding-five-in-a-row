@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="150" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+    <!-- Голова -->
+    <circle cx="50" cy="40" r="35" fill="#FFD700"/>
+    
+    <!-- Волосы -->
+    <path d="M 20 30 Q 50 5 80 30" stroke="#8B4513" stroke-width="8" fill="none"/>
+    
+    <!-- Глаза -->
+    <circle cx="35" cy="35" r="4" fill="#000"/>
+    <circle cx="65" cy="35" r="4" fill="#000"/>
+    
+    <!-- Блики в глазах -->
+    <circle cx="36" cy="34" r="1.5" fill="#fff"/>
+    <circle cx="66" cy="34" r="1.5" fill="#fff"/>
+    
+    <!-- Улыбка -->
+    <path d="M 35 50 Q 50 60 65 50" stroke="#000" stroke-width="2" fill="none"/>
+    
+    <!-- Брови -->
+    <path d="M 30 30 Q 35 25 40 30" stroke="#000" stroke-width="2" fill="none"/>
+    <path d="M 60 30 Q 65 25 70 30" stroke="#000" stroke-width="2" fill="none"/>
+    
+    <!-- Тело -->
+    <path d="M 50 75 L 50 120" stroke="#FFD700" stroke-width="30" fill="none"/>
+    
+    <!-- Руки -->
+    <path d="M 35 85 Q 20 90 15 85" stroke="#FFD700" stroke-width="12" fill="none"/>
+    <path d="M 65 85 Q 80 90 85 85" stroke="#FFD700" stroke-width="12" fill="none"/>
+    
+    <!-- Кисти рук -->
+    <circle cx="15" cy="85" r="6" fill="#FFD700"/>
+    <circle cx="85" cy="85" r="6" fill="#FFD700"/>
+    
+    <!-- Ноги -->
+    <path d="M 35 120 L 35 140" stroke="#FFD700" stroke-width="12" fill="none"/>
+    <path d="M 65 120 L 65 140" stroke="#FFD700" stroke-width="12" fill="none"/>
+    
+    <!-- Обувь -->
+    <path d="M 25 140 L 45 140" stroke="#8B4513" stroke-width="8" fill="none"/>
+    <path d="M 55 140 L 75 140" stroke="#8B4513" stroke-width="8" fill="none"/>
+    
+    <!-- Рубашка -->
+    <path d="M 35 75 Q 50 85 65 75" stroke="#4169E1" stroke-width="25" fill="none"/>
+    
+    <!-- Галстук -->
+    <path d="M 50 75 L 50 100" stroke="#FF0000" stroke-width="3" fill="none"/>
+    <path d="M 50 100 L 45 105" stroke="#FF0000" stroke-width="3" fill="none"/>
+    <path d="M 50 100 L 55 105" stroke="#FF0000" stroke-width="3" fill="none"/>
+</svg> 

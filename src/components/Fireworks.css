@@ -1,0 +1,150 @@
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.firework {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    /* Центрируем точку взрыва */
+    transform: translate(-50%, -50%);
+}
+
+.rocket {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: var(--color);
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--color);
+    animation: rocket-trail 2s ease-out forwards;
+}
+
+.particle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: var(--color);
+    box-shadow: 0 0 16px 4px var(--color), 0 0 32px 8px var(--color);
+    opacity: 0;
+    transform: rotate(var(--angle)) translateY(0);
+    animation: firework-particle var(--duration, 4s) cubic-bezier(0.2,0.7,0.4,1) forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+.particle-trail {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle, var(--color) 0%, transparent 70%);
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px var(--color),
+        0 0 20px var(--color),
+        0 0 30px var(--color);
+    animation: particle 1s ease-out forwards;
+    animation-delay: calc(1s + var(--delay));
+}
+
+@keyframes launch {
+    0% {
+        transform: translateY(0) rotate(var(--angle));
+    }
+    50% {
+        transform: translateY(-50vh) rotate(var(--angle));
+    }
+    51% {
+        transform: translateY(-50vh) rotate(var(--angle)) scale(0);
+    }
+    52% {
+        transform: translateY(-50vh) rotate(var(--angle)) scale(1);
+    }
+    100% {
+        transform: translateY(-50vh) rotate(var(--angle)) scale(1);
+    }
+}
+
+@keyframes rocket-trail {
+    0% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    51% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+}
+
+@keyframes show-particles {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    51% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes particle {
+    0% {
+        transform: rotate(var(--angle)) translateY(0) translateZ(0) scale(0);
+        opacity: 1;
+    }
+    10% {
+        transform: rotate(var(--angle)) translateY(calc(var(--distance) * 0.1)) translateZ(50px) scale(1.5);
+        opacity: 0.9;
+    }
+    30% {
+        transform: rotate(var(--angle)) translateY(calc(var(--distance) * 0.3)) translateZ(100px) scale(1.2);
+        opacity: 0.8;
+    }
+    60% {
+        transform: rotate(var(--angle)) translateY(calc(var(--distance) * 0.6)) translateZ(150px) scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: rotate(var(--angle)) translateY(var(--distance)) translateZ(200px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes firework-particle {
+    0% {
+        opacity: 0;
+        transform: rotate(var(--angle)) translateY(0) scale(1);
+    }
+    5% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+        transform: rotate(var(--angle)) translateY(var(--distance)) scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(var(--angle)) translateY(calc(var(--distance) * 1.2)) scale(0.5);
+    }
+} 
